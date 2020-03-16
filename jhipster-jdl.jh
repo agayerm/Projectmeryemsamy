@@ -1,0 +1,64 @@
+entity UserGlobal{
+name String,
+firstName String,
+age Integer,
+sexe String,
+email String,
+passWord String,
+coach Boolean
+}
+
+entity UserCertification{
+nameCertification String,
+duree String,
+dateGiv String,
+lieuObtention String,
+domaine String
+}
+
+entity ActivityOffer{
+prix Double,
+listActivity String
+}
+
+entity Comment{
+commentaire String,
+oint Integer,
+date String,
+}
+
+entity Activite{
+dateDebut String,
+dateFin String,
+prix Double,
+}
+
+
+
+
+relationship OneToMany {
+UserGlobal to Comment
+Comment to Activite
+UserGlobal to UserCertification
+UserGlobal to ActivityOffer
+Activite to UserGlobal
+}
+
+relationship OneToOne {
+UserCertification to ActivityOffer
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
